@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1559608488 source:/home/iftm/Diego/main.c
+1559609681 source:/home/iftm/Diego/main.c
 	<stdio.h>
 	<stdlib.h>
 	<locale.h>

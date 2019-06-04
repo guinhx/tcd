@@ -35,7 +35,7 @@ void cadastro(v *voo){
         printf("Destino: ");
         scanf("%s", &(voo[i]).destino);
         printf("Data: ");
-        scanf("%d%d", &voo[i].data.dia, &voo[i].data.mes);
+        scanf("%d%*c%d", &voo[i].data.dia, &voo[i].data.mes);
         printf("Horário: ");
         scanf("%d%d", &voo[i].horario.h, &voo[i].horario.m);
         printf("Valor: ");

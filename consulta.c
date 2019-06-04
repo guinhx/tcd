@@ -53,7 +53,7 @@ void porNum(v *voo){
     for(i=0; i < 4; i++){
         if(voo[i].numero == num){
             aux = 1;
-            printf("--- VOO ENCONTRADO ---\n Voo de número (%d)\nOrigem: %s\nDestino: %s\nData: %d/%d/2019 - Horário: %d:%d\n------------------\n", num, voo[i].origem, voo[i].destino, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m);
+            printf("--- VOO ENCONTRADO ---\nVoo de número (%d)\nOrigem: %s\nDestino: %s\nData: %02d/%02d/2019 - Horário: %02d:%02d\n------------------\n", num, voo[i].origem, voo[i].destino, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m);
             break;
         }else{
             aux = 0;
@@ -73,7 +73,7 @@ void porOrigem(v *voo){
     for(i=0; i < 4; i++){
         if(strcmp(voo[i].origem, origem)){
             aux = 1;
-            printf("Voo de número (%d)\nOrigem: %s\nDestino: %s\nData: %d/%d/2019 - Horário: %d:%d\n", voo[i].numero, voo[i].origem, voo[i].destino, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m);
+            printf("Voo de número (%d)\nOrigem: %s\nDestino: %s\nData: %02d/%02d/2019 - Horário: %02d:%02d\n", voo[i].numero, voo[i].origem, voo[i].destino, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m);
         }else{
             aux = 0;
         }
@@ -92,7 +92,7 @@ void porDestino(v *voo){
     for(i=0; i < 4; i++){
         if(strcmp(voo[i].destino, destino)){
             aux = 1;
-            printf("Voo de número (%d)\nOrigem: %s\nDestino: %s\nData: %d/%d/2019 - Horário: %d:%d\n", voo[i].numero, voo[i].origem, voo[i].destino, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m);
+            printf("Voo de número (%d)\nOrigem: %s\nDestino: %s\nData: %02d/%02d/2019 - Horário: %02d:%02d\n", voo[i].numero, voo[i].origem, voo[i].destino, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m);
         }else{
             aux = 0;
         }

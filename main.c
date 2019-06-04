@@ -48,7 +48,7 @@ int main()
             consulta(&voo);
             break;
         }
-        op = 0;
+        menu();
     }
     while(op != 3);
     return 0;
