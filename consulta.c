@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 typedef struct
 {
     int dia;
@@ -52,7 +53,7 @@ void porNum(v *voo){
     for(i=0; i < 4; i++){
         if(voo[i].numero == num){
             aux = 1;
-            printf("Voo de número (%d)\nOrigem: %s\nDestino: %s\nData: %d/%d/2019 - Horário: %d:%d\n", num, voo[i].origem, voo[i].destino, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m);
+            printf("--- VOO ENCONTRADO ---\n Voo de número (%d)\nOrigem: %s\nDestino: %s\nData: %d/%d/2019 - Horário: %d:%d\n------------------\n", num, voo[i].origem, voo[i].destino, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m);
             break;
         }else{
             aux = 0;
@@ -62,22 +63,41 @@ void porNum(v *voo){
         printf("Não existe nenhum voo com o número informado.");
     }
 }
-void porOrigem(){
+void porOrigem(v *voo){
     char origem[30];
     printf("Informe a origem do voo: ");
-    scanf("%s", &origem);
+    scanf("%s", origem);
     int i;
     int aux = -1;
+    printf("\nVOO(s) encontrado: ");
     for(i=0; i < 4; i++){
-        if(strcomp(voo[i].origem, origem)){
+        if(strcmp(voo[i].origem, origem)){
             aux = 1;
             printf("Voo de número (%d)\nOrigem: %s\nDestino: %s\nData: %d/%d/2019 - Horário: %d:%d\n", voo[i].numero, voo[i].origem, voo[i].destino, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m);
-            break;
         }else{
             aux = 0;
         }
     }
     if(aux == 0){
-        printf("Não existe nenhum voo com a origem informada.");
+        printf(" - Não existe nenhum voo com a origem informada.");
+    }
+}
+void porDestino(v *voo){
+    char destino[30];
+    printf("Informe o destino do voo: ");
+    scanf("%s", destino);
+    int i;
+    int aux = -1;
+    printf("\nVOO(s) encontrado: \n");
+    for(i=0; i < 4; i++){
+        if(strcmp(voo[i].destino, destino)){
+            aux = 1;
+            printf("Voo de número (%d)\nOrigem: %s\nDestino: %s\nData: %d/%d/2019 - Horário: %d:%d\n", voo[i].numero, voo[i].origem, voo[i].destino, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m);
+        }else{
+            aux = 0;
+        }
+    }
+    if(aux == 0){
+        printf(" - Não existe nenhum voo com o destino informado.");
     }
 }
