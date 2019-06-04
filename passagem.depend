@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1559609681 source:/home/iftm/Diego/main.c
+1559610254 source:/home/iftm/Diego/main.c
 	<stdio.h>
 	<stdlib.h>
 	<locale.h>
@@ -7,9 +7,10 @@
 1559606057 source:/home/iftm/Diego/menu.c
 	<stdio.h>
 
-1559608501 source:/home/iftm/Diego/consulta.c
+1559610655 source:/home/iftm/Diego/consulta.c
 	<stdio.h>
+	<string.h>
 
-1559608963 source:/home/iftm/Diego/voo.c
+1559610902 source:/home/iftm/Diego/voo.c
 	<stdio.h>
 

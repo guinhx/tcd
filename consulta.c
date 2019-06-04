@@ -60,7 +60,7 @@ void porNum(v *voo){
         }
     }
     if(aux == 0){
-        printf("Não existe nenhum voo com o número informado.");
+        printf("Não existe nenhum voo com o número informado.\n");
     }
 }
 void porOrigem(v *voo){

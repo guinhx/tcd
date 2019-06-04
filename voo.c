@@ -37,7 +37,7 @@ void cadastro(v *voo){
         printf("Data: ");
         scanf("%d%*c%d", &voo[i].data.dia, &voo[i].data.mes);
         printf("Horário: ");
-        scanf("%d%d", &voo[i].horario.h, &voo[i].horario.m);
+        scanf("%d%*c%d", &voo[i].horario.h, &voo[i].horario.m);
         printf("Valor: ");
         scanf("%f", &voo[i].valor);
         voo[i].poltronas.disponiveis = 180;
