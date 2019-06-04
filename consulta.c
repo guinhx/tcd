@@ -69,11 +69,11 @@ void porOrigem(v *voo){
     scanf("%s", origem);
     int i;
     int aux = -1;
-    printf("\nVOO(s) encontrado: ");
+    printf("\n--- ENCONTRADO(s) ---\n");
     for(i=0; i < 4; i++){
-        if(strcmp(voo[i].origem, origem)){
+        if(strcmp(voo[i].origem, origem) == 0){
             aux = 1;
-            printf("Voo de número (%d)\nOrigem: %s\nDestino: %s\nData: %02d/%02d/2019 - Horário: %02d:%02d\n", voo[i].numero, voo[i].origem, voo[i].destino, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m);
+            printf("Voo de número (%d)\nOrigem: %s\nDestino: %s\nData: %02d/%02d/2019 - Horário: %02d:%02d\n\n", voo[i].numero, voo[i].origem, voo[i].destino, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m);
         }else{
             aux = 0;
         }
@@ -88,11 +88,11 @@ void porDestino(v *voo){
     scanf("%s", destino);
     int i;
     int aux = -1;
-    printf("\nVOO(s) encontrado: \n");
+    printf("\n--- ENCONTRADO(s) ---\n");
     for(i=0; i < 4; i++){
-        if(strcmp(voo[i].destino, destino)){
+        if(strcmp(voo[i].destino, destino) == 0){
             aux = 1;
-            printf("Voo de número (%d)\nOrigem: %s\nDestino: %s\nData: %02d/%02d/2019 - Horário: %02d:%02d\n", voo[i].numero, voo[i].origem, voo[i].destino, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m);
+            printf("Voo de número (%d)\nOrigem: %s\nDestino: %s\nData: %02d/%02d/2019 - Horário: %02d:%02d\n\n", voo[i].numero, voo[i].origem, voo[i].destino, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m);
         }else{
             aux = 0;
         }
