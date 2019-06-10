@@ -28,20 +28,20 @@ void cadastro(v *voo){
     printf("--- CADASTRO DE VOO ---\n");
     int i;
     for(i = 0; i < 4; i++){
-        printf("NÃºmero do voo: ");
-        scanf("%d", &(voo[i]).numero);
+        printf("Número do voo: ");
+        scanf("%d", &voo[i].numero);
         printf("Origem: ");
-        scanf("%s", &(voo[i]).origem);
+        scanf("%s", &voo[i].origem);
         printf("Destino: ");
-        scanf("%s", &(voo[i]).destino);
+        scanf("%s", &voo[i].destino);
         printf("Data: ");
         scanf("%d%*c%d", &voo[i].data.dia, &voo[i].data.mes);
-        printf("HorÃ¡rio: ");
+        printf("Horário: ");
         scanf("%d%*c%d", &voo[i].horario.h, &voo[i].horario.m);
         printf("Valor: ");
         scanf("%f", &voo[i].valor);
         voo[i].poltronas.disponiveis = 180;
         voo[i].poltronas.total = 180;
-        printf("Voo de nÃºmero %d cadastrado.\n\n", voo[i].numero);
+        printf("Voo de número %d cadastrado.\n\n", voo[i].numero);
     }
 }

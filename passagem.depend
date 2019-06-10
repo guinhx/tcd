@@ -14,3 +14,18 @@
 1559610902 source:/home/iftm/Diego/voo.c
 	<stdio.h>
 
+1560217127 source:c:\users\iftm\downloads\tcd-master\consulta.c
+	<stdio.h>
+	<string.h>
+
+1560217051 source:c:\users\iftm\downloads\tcd-master\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+
+1560217116 source:c:\users\iftm\downloads\tcd-master\menu.c
+	<stdio.h>
+
+1560217138 source:c:\users\iftm\downloads\tcd-master\voo.c
+	<stdio.h>
+

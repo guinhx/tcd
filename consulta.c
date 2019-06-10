@@ -26,10 +26,14 @@ typedef struct
     p poltronas;
 } v;
 
+void porNum(v *voo);
+void porOrigem(v *voo);
+void porDestino(v *voo);
+
 void consulta(v *voo){
     int op = 0;
     do{
-        printf("1 â€“ Por nÃºmero de voo\n2 â€“ Por origem\n3 â€“ Por destino\nEscolha uma opÃ§Ã£o: ");
+        printf("1 – Por número de voo\n2 – Por origem\n3 – Por destino\nEscolha uma opção: ");
         scanf("%d", &op);
     }while(op < 1 && op > 3);
     switch(op){
@@ -46,21 +50,21 @@ void consulta(v *voo){
 }
 void porNum(v *voo){
     int num;
-    printf("Informe o nÃºmero do voo: ");
+    printf("Informe o número do voo: ");
     scanf("%d", &num);
     int i;
     int aux = -1;
     for(i=0; i < 4; i++){
         if(voo[i].numero == num){
             aux = 1;
-            printf("--- VOO ENCONTRADO ---\nVoo de nÃºmero (%d)\nOrigem: %s\nDestino: %s\nData: %02d/%02d/2019 - HorÃ¡rio: %02d:%02d\n------------------\n", num, voo[i].origem, voo[i].destino, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m);
+            printf("--- VOO ENCONTRADO ---\nVoo de número (%d)\nOrigem: %s\nDestino: %s\nData: %02d/%02d/2019 - Horário: %02d:%02d\n------------------\n", num, voo[i].origem, voo[i].destino, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m);
             break;
         }else{
             aux = 0;
         }
     }
     if(aux == 0){
-        printf("NÃ£o existe nenhum voo com o nÃºmero informado.\n");
+        printf("Não existe nenhum voo com o número informado.\n");
     }
 }
 void porOrigem(v *voo){
@@ -73,13 +77,13 @@ void porOrigem(v *voo){
     for(i=0; i < 4; i++){
         if(strcmp(voo[i].origem, origem) == 0){
             aux = 1;
-            printf("Voo de nÃºmero (%d)\nOrigem: %s\nDestino: %s\nData: %02d/%02d/2019 - HorÃ¡rio: %02d:%02d\n\n", voo[i].numero, voo[i].origem, voo[i].destino, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m);
+            printf("Voo de número (%d)\nOrigem: %s\nDestino: %s\nData: %02d/%02d/2019 - Horário: %02d:%02d\n\n", voo[i].numero, voo[i].origem, voo[i].destino, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m);
         }else{
             aux = 0;
         }
     }
     if(aux == 0){
-        printf(" - NÃ£o existe nenhum voo com a origem informada.");
+        printf(" - Não existe nenhum voo com a origem informada.");
     }
 }
 void porDestino(v *voo){
@@ -87,17 +91,15 @@ void porDestino(v *voo){
     printf("Informe o destino do voo: ");
     scanf("%s", destino);
     int i;
-    int aux = -1;
+    int aux = 0;
     printf("\n--- ENCONTRADO(s) ---\n");
     for(i=0; i < 4; i++){
-        if(strcmp(voo[i].destino, destino) == 0){
-            aux = 1;
-            printf("Voo de nÃºmero (%d)\nOrigem: %s\nDestino: %s\nData: %02d/%02d/2019 - HorÃ¡rio: %02d:%02d\n\n", voo[i].numero, voo[i].origem, voo[i].destino, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m);
-        }else{
-            aux = 0;
+        if(strcmp(voo[i].destino, destino) == 0 || strlen(voo[i].destino) == strlen(destino)){
+            aux++;
+            printf("Voo de número (%d)\nOrigem: %s\nDestino: %s\nData: %02d/%02d/2019 - Horário: %02d:%02d\n\n", voo[i].numero, voo[i].origem, voo[i].destino, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m);
         }
     }
     if(aux == 0){
-        printf(" - NÃ£o existe nenhum voo com o destino informado.");
+        printf(" - Não existe nenhum voo com o destino informado.");
     }
 }
