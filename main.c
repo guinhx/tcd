@@ -16,6 +16,7 @@ typedef struct
 typedef struct
 {
     int disponiveis, total;
+    int lugares[30][6];
 } p;
 typedef struct
 {
@@ -29,7 +30,8 @@ typedef struct
 } v;
 int menu();
 
-void consulta();
+void consulta(v *voo);
+void reservar(v *voo);
 
 void cadastro();
 
@@ -46,6 +48,9 @@ int main()
         {
         case 1:
             consulta(&voo);
+            break;
+        case 2:
+            reservar(&voo);
             break;
         }
         menu();

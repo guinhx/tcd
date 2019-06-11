@@ -14,6 +14,7 @@ typedef struct
 typedef struct
 {
     int disponiveis, total;
+    int lugares[30][6];
 } p;
 typedef struct
 {
@@ -53,18 +54,16 @@ void porNum(v *voo){
     printf("Informe o número do voo: ");
     scanf("%d", &num);
     int i;
-    int aux = -1;
+    int aux = 0;
     for(i=0; i < 4; i++){
         if(voo[i].numero == num){
-            aux = 1;
-            printf("--- VOO ENCONTRADO ---\nVoo de número (%d)\nOrigem: %s\nDestino: %s\nData: %02d/%02d/2019 - Horário: %02d:%02d\n------------------\n", num, voo[i].origem, voo[i].destino, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m);
+            aux++;
+            printf("--- VOO ENCONTRADO ---\nNúmero: %d\nOrigem: %s\nDestino: %s.\nVagas: %d/180 disponiveis.\nData: %02d/%02d/2019 - Horário: %02d:%02d\nValor: R$%.2f\n------------------\n", voo[i].numero, voo[i].origem, voo[i].destino, voo[i].poltronas.disponiveis, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m, voo[i].valor);
             break;
-        }else{
-            aux = 0;
         }
     }
     if(aux == 0){
-        printf("Não existe nenhum voo com o número informado.\n");
+        printf(" - Não existe nenhum voo com o número informado.\n");
     }
 }
 void porOrigem(v *voo){
@@ -72,14 +71,12 @@ void porOrigem(v *voo){
     printf("Informe a origem do voo: ");
     scanf("%s", origem);
     int i;
-    int aux = -1;
+    int aux = 0;
     printf("\n--- ENCONTRADO(s) ---\n");
     for(i=0; i < 4; i++){
-        if(strcmp(voo[i].origem, origem) == 0){
-            aux = 1;
-            printf("Voo de número (%d)\nOrigem: %s\nDestino: %s\nData: %02d/%02d/2019 - Horário: %02d:%02d\n\n", voo[i].numero, voo[i].origem, voo[i].destino, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m);
-        }else{
-            aux = 0;
+        if(strcmp(voo[i].origem, origem) == 0 || strlen(voo[i].origem) == strlen(origem)){
+            aux++;
+            printf("Número: %d\nOrigem: %s\nDestino: %s.\nVagas: %d/180 disponiveis.\nData: %02d/%02d/2019 - Horário: %02d:%02d\nValor: R$%.2f\n------------------\n", voo[i].numero, voo[i].origem, voo[i].destino, voo[i].poltronas.disponiveis, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m, voo[i].valor);
         }
     }
     if(aux == 0){
@@ -96,7 +93,7 @@ void porDestino(v *voo){
     for(i=0; i < 4; i++){
         if(strcmp(voo[i].destino, destino) == 0 || strlen(voo[i].destino) == strlen(destino)){
             aux++;
-            printf("Voo de número (%d)\nOrigem: %s\nDestino: %s\nData: %02d/%02d/2019 - Horário: %02d:%02d\n\n", voo[i].numero, voo[i].origem, voo[i].destino, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m);
+            printf("Número: %d\nOrigem: %s\nDestino: %s.\nVagas: %d/180 disponiveis.\nData: %02d/%02d/2019 - Horário: %02d:%02d\nValor: R$%.2f\n------------------\n", voo[i].numero, voo[i].origem, voo[i].destino, voo[i].poltronas.disponiveis, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m, voo[i].valor);
         }
     }
     if(aux == 0){
