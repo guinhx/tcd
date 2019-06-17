@@ -5,12 +5,20 @@ typedef struct
     int dia;
     int mes;
 } d;
-
 typedef struct
 {
     int h;
     int m;
 } h;
+typedef struct{
+    char nome[48];
+    int cpf;
+    int voo;
+    int poltrona;
+    d data;
+    h horario;
+    float valor;
+} g;
 typedef struct
 {
     int disponiveis, total;

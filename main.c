@@ -7,12 +7,20 @@ typedef struct
     int dia;
     int mes;
 } d;
-
 typedef struct
 {
     int h;
     int m;
 } h;
+typedef struct{
+    char nome[48];
+    int cpf;
+    int voo;
+    int poltrona;
+    d data;
+    h horario;
+    float valor;
+} g;
 typedef struct
 {
     int disponiveis, total;
@@ -28,12 +36,36 @@ typedef struct
     float valor;
     p poltronas;
 } v;
-int menu();
 
+int menu();
 void consulta(v *voo);
 void reservar(v *voo);
 
 void cadastro();
+int pos[2];
+int * GetPos(int value){
+    pos[2];
+    if(value > 30 && value <= 60){
+        pos[0] = 1;
+        pos[1] = value - 31;
+    }else if(value > 60 && value <= 90){
+        pos[0] = 2;
+        pos[1] = value - 61;
+    }else if(value > 90 && value <= 120){
+        pos[0] = 3;
+        pos[1] = value - 91;
+    }else if(value > 120 && value <= 150){
+        pos[0] = 4;
+        pos[1] = value - 121;
+    }else if(value > 150 && value <= 180){
+        pos[0] = 5;
+        pos[1] = value - 151;
+    }else{
+        pos[0] = 0;
+        pos[1] = value - 1;
+    }
+    return pos;
+}
 
 int main()
 {
@@ -53,7 +85,7 @@ int main()
             reservar(&voo);
             break;
         }
-        menu();
+        op = menu();
     }
     while(op != 3);
     return 0;

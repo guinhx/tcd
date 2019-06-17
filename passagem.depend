@@ -32,3 +32,22 @@
 1560223442 source:c:\users\iftm\downloads\tcd-master\reservar.c
 	<stdio.h>
 
+1560820596 source:d:\tcd-master\consulta.c
+	<stdio.h>
+	<string.h>
+
+1560824896 source:d:\tcd-master\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+
+1560820596 source:d:\tcd-master\menu.c
+	<stdio.h>
+
+1560825738 source:d:\tcd-master\voo.c
+	<stdio.h>
+	<stdlib.h>
+
+1560825053 source:d:\tcd-master\reservar.c
+	<stdio.h>
+
