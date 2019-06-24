@@ -71,3 +71,23 @@
 	<stdio.h>
 	<time.h>
 
+1561427129 source:d:\tcd\consulta.c
+	<stdio.h>
+	<string.h>
+
+1561425106 source:d:\tcd\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+
+1561425106 source:d:\tcd\menu.c
+	<stdio.h>
+
+1561425945 source:d:\tcd\reservar.c
+	<stdio.h>
+	<time.h>
+
+1561425106 source:d:\tcd\voo.c
+	<stdio.h>
+	<stdlib.h>
+

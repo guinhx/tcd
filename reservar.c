@@ -82,9 +82,9 @@ void reservar(v *voo){
             setbuf(stdin, NULL);
             scanf("%[^\n]s", nome);
             setbuf(stdin, NULL);
-            int cpf;
+            float cpf;
             printf(" - CPF: ");
-            scanf("%d", &cpf);
+            scanf("%f", &cpf);
             int poltrona = n2;
             time_t mytime;
             mytime = time(NULL);
@@ -93,11 +93,14 @@ void reservar(v *voo){
             int dias = GetDifference(tm.tm_mday, tm.tm_mon+1, voo[index].data.dia, voo[index].data.mes);
             int aux = dias/30;
             if(aux >= 1){
+                printf("AUX: %d\n", aux);
                 valor = voo[index].valor - (voo[index].valor * (0.05 * aux));
+            }else{
+                valor = voo[index].valor;
             }
             printf("\n===----------- COMPROVANTE -----------===\n");
             printf("    Nome: %s\n", nome);
-            printf("    CPF: %08d\n", cpf);
+            printf("    CPF: %11.0f\n", cpf);
             printf("    Origem: %s - Destino: %s\n", voo[index].origem, voo[index].destino);
             printf("    Data: %02d/%02d/2019 - Horario: %02d:%02d\n", voo[index].data.dia, voo[index].data.mes, voo[index].horario.h, voo[index].horario.m);
             printf("    Poltrona: %d [C%d|L%d]\n", poltrona, GetPos(poltrona)[0], GetPos(poltrona)[1]);

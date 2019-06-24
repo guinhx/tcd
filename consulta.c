@@ -29,6 +29,7 @@ typedef struct
 void porNum(v *voo);
 void porOrigem(v *voo);
 void porDestino(v *voo);
+int existe(v* voo, int num);
 
 void consulta(v *voo){
     int op = 0;
@@ -52,17 +53,11 @@ void porNum(v *voo){
     int num;
     printf("Informe o número do voo: ");
     scanf("%d", &num);
-    int i;
-    int aux = 0;
-    for(i=0; i < 4; i++){
-        if(voo[i].numero == num){
-            aux++;
-            printf("--- VOO ENCONTRADO ---\nNúmero: %d\nOrigem: %s\nDestino: %s.\nVagas: %d/180 disponiveis.\nData: %02d/%02d/2019 - Horário: %02d:%02d\nValor: R$%.2f\n------------------\n", voo[i].numero, voo[i].origem, voo[i].destino, voo[i].poltronas.disponiveis, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m, voo[i].valor);
-            break;
-        }
-    }
-    if(aux == 0){
-        printf(" - Não existe nenhum voo com o número informado.\n");
+    int i = existe(voo, num);
+    if(i != -1){
+        printf("--- VOO ENCONTRADO ---\nNúmero: %d\nOrigem: %s\nDestino: %s.\nVagas: %d/180 disponiveis.\nData: %02d/%02d/2019 - Horário: %02d:%02d\nValor: R$%.2f\n------------------\n", voo[i].numero, voo[i].origem, voo[i].destino, voo[i].poltronas.disponiveis, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m, voo[i].valor);
+    }else{
+        printf(" - Não existe nenhum voo com o número informado.\n\n");
     }
 }
 void porOrigem(v *voo){
