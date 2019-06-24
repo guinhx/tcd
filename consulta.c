@@ -10,15 +10,6 @@ typedef struct
     int h;
     int m;
 } h;
-typedef struct{
-    char nome[48];
-    int cpf;
-    int voo;
-    int poltrona;
-    d data;
-    h horario;
-    float valor;
-} g;
 typedef struct
 {
     int disponiveis, total;
@@ -82,7 +73,7 @@ void porOrigem(v *voo){
     int aux = 0;
     printf("\n--- ENCONTRADO(s) ---\n");
     for(i=0; i < 4; i++){
-        if(strcmp(voo[i].origem, origem) == 0 || strlen(voo[i].origem) == strlen(origem)){
+        if(strcmp(voo[i].origem, origem) == 0 && strlen(voo[i].origem) == strlen(origem)){
             aux++;
             printf("Número: %d\nOrigem: %s\nDestino: %s.\nVagas: %d/180 disponiveis.\nData: %02d/%02d/2019 - Horário: %02d:%02d\nValor: R$%.2f\n------------------\n", voo[i].numero, voo[i].origem, voo[i].destino, voo[i].poltronas.disponiveis, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m, voo[i].valor);
         }
@@ -99,7 +90,7 @@ void porDestino(v *voo){
     int aux = 0;
     printf("\n--- ENCONTRADO(s) ---\n");
     for(i=0; i < 4; i++){
-        if(strcmp(voo[i].destino, destino) == 0 || strlen(voo[i].destino) == strlen(destino)){
+        if(strcmp(voo[i].destino, destino) == 0 && strlen(voo[i].destino) == strlen(destino)){
             aux++;
             printf("Número: %d\nOrigem: %s\nDestino: %s.\nVagas: %d/180 disponiveis.\nData: %02d/%02d/2019 - Horário: %02d:%02d\nValor: R$%.2f\n------------------\n", voo[i].numero, voo[i].origem, voo[i].destino, voo[i].poltronas.disponiveis, voo[i].data.dia, voo[i].data.mes, voo[i].horario.h, voo[i].horario.m, voo[i].valor);
         }
